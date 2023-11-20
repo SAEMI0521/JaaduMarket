@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="key_searchlist">
+
+	<insert id="insert" parameterType="key_searchlist">
+		insert into key_searchlist values(key_searchlist_seq.nextval, #{m_seq}, #{key_name}, sysdate)
+	</insert>
+	
+	<!-- 나의 검색 내역 -->
+	<select id="myKey" parameterType="int" resultType="String">
+		select distinct key_name from
+			(select key_name from key_searchlist
+			where m_seq=#{m_seq} order by search_date desc)
+        <![CDATA[
+			where rownum <=5
+		]]>  
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

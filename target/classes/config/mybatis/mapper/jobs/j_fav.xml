@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="j_fav">
+
+	<insert id="jFavInsert" parameterType="j_fav">
+	insert into j_fav values(j_fav.seq_nextval,#{m_seq},#{j_seq})
+	</insert>
+	
+	<delete id="jFavDelete" parameterType="map">
+	delete from j_fav where m_seq=#{m_seq} and j_seq=#{j_seq})
+	</delete>
+	
+	<select id="jFavCnt" parameterType="map" resultType="int">
+	select count(*) from j_fav where m_seq=#{m_seq} and j_seq=#{j_seq}
+	
+	</select>
+	<select id="jFavAllCnt" resultType="int">
+	select count(*) from j_fav
+	
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
